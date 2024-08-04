@@ -1,0 +1,221 @@
+*, html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: gray;
+}
+
+.foto img {
+    width: 250px ;
+    height: 350px;
+    position: fixed;
+    top: 250px;
+    right: 800px;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    /* background-color: tomato; */
+    font-size: 48px;
+    cursor: pointer;
+}
+
+.menu-list{
+    font-size: 48px;
+    display: none;
+    /* background-color: tomato; */
+}
+
+.navbar {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+.navbar a {
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    padding: 8px 0;
+    transition: all 300ms;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid black;
+}
+
+.tool {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tip {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 125%; /* Posisi di atas elemen yang di-hover */
+    left: 50%;
+    margin-left: -80px; /* Menyesuaikan lebar */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tip::after {
+    content: "";
+    position: absolute;
+    bottom: 100%; /* Di bagian bawah tooltip */
+    left: 47%;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #555;
+
+}
+
+.tool:hover .tip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tip1 {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 125%; /* Posisi di atas elemen yang di-hover */
+    left: 50%;
+    margin-left: -80px; /* Menyesuaikan lebar */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tip1::after {
+    content: "";
+    position: absolute;
+    bottom: 100%; /* Di bagian bawah tooltip */
+    left: 47%;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #555;
+}
+
+.tool:hover .tip1 {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .navbar ul {
+        display: flex;
+        align-items:flex-end;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 3%;
+        margin-right: 3%;
+    }
+
+    .navbar li:last-of-type {
+        padding-bottom: 8px;
+        padding-top: 8px;
+    }
+
+    .navbar a {
+        font-size: large;
+        font-weight: 600;
+    }
+
+    .tip {
+        visibility: hidden;
+        width: 160px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        top: 20%; /* Posisi di atas elemen yang di-hover */
+        left: 100%;
+        margin-left: -280px; /* Menyesuaikan lebar */
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 15px;
+    }
+
+    .tip::after {
+        content: "";
+        position: absolute;
+        top: -5%; /* Di bagian bawah tooltip */
+        left: 98%;
+        border-bottom: 15px solid transparent;
+        border-top: 15px solid transparent;
+        border-left: 15px solid #555;
+    }
+
+    .tip1 {
+        visibility: hidden;
+        width: 180px;
+        background-color: #555;
+        color: #fff;
+        text-align: 10px;
+        border-radius: 5px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        top: 20%; /* Posisi di atas elemen yang di-hover */
+        left: 80%;
+        margin-left: -280px; /* Menyesuaikan lebar */
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 15px;
+    }
+
+    .tip1::after {
+        content: "";
+        position: absolute;
+        top: -5%; /* Di bagian bawah tooltip */
+        left: 98%;
+        border-bottom: 15px solid transparent;
+        border-top: 15px solid transparent;
+        border-left: 15px solid #555;
+    }
+
+    ul.hidden {
+        display: none;
+    }
+
+    .menu-list {
+        display: flex;
+        align-items: center;
+    }
+}
