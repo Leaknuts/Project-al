@@ -5,7 +5,8 @@
 }
 
 body{
-    background-color: gray;
+    background:linear-gradient(45deg, #32ff32,#00df62,#54ffce);
+    height: 100vh;
 }
 
 .foto img {
@@ -17,18 +18,14 @@ body{
 
 }
 
+/* navbar */
+
 .logo {
     display: flex;
     align-items: center;
     /* background-color: tomato; */
     font-size: 48px;
     cursor: pointer;
-}
-
-.menu-list{
-    font-size: 48px;
-    display: none;
-    /* background-color: tomato; */
 }
 
 .navbar {
@@ -129,6 +126,8 @@ body{
     visibility: visible;
     opacity: 1;
 }
+/* navbar-end */
+
 
 @media only screen and (max-width: 768px) {
     .navbar {
@@ -215,7 +214,52 @@ body{
     }
 
     .menu-list {
+        position: relative;
         display: flex;
+        justify-content: center;
         align-items: center;
-    }
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+        /* border: 3px solid #fff; */
+      }
+      .icon {
+        width: 45px;
+        height: 3px;
+        background: #000000;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(255,101,47,.2);
+        transition: all .5s ease-in-out;
+      }
+      .icon::before,
+      .icon::after {
+        content: '';
+        position: absolute;
+        width: 45px;
+        height: 3px;
+        background: #010101;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(255,101,47,.2);
+        transition: all .5s ease-in-out;
+      }
+      .icon::before {
+        transform: translateY(-16px);
+      }
+      .icon::after {
+        transform: translateY(16px);
+      }
+      /* ANIMATION */
+      .menu-list.open .icon {
+        transform: translateX(-50px);
+        background: transparent;
+        box-shadow: none;
+      }
+      .menu-list.open .icon::before {
+        transform: rotate(45deg) translate(35px, -35px);
+      }
+      .menu-list.open .icon::after {
+        transform: rotate(-45deg) translate(35px, 35px);
+      }
+    
 }
