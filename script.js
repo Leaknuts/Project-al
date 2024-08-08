@@ -6,12 +6,10 @@ menuList.addEventListener('click', () => {
   if(!menuOpen) {
     menuList.classList.add('open');
     menuOpen = true;
+    Hidden.classList.remove("hidden")
   } else {
     menuList.classList.remove('open');
     menuOpen = false;
+    Hidden.classList.add("hidden")
   }
 });
-
-menuList.addEventListener("click", () => {
-    Hidden.classList.toggle("hidden")
-})
